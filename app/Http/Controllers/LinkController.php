@@ -174,7 +174,7 @@ class LinkController extends Controller
         $download = $pdf->download($fileName);
         $link = URL::temporarySignedRoute('quotations.downloaded', now()->addSeconds(10));
 
-        return redirect($link);
+        return $download;
         
 
        

@@ -11,8 +11,8 @@
                 <hr style="margin-bottom:30px;border: 2px sold white">
                 
                 <div class="flex items-center justify-center">
-                    <img src="{{url($user->logo)}}" class="h-12 h-auto max-w-lg " alt="User Logo" />                                        
-                </div>
+                    <img src="{{url($user->logo)}}" class="h-12 h-auto max-w-lg " style="width:120px;height:120px;"  alt="User Logo" />                                        
+		</div>
                 <h6 class="mb-2 text-center text-xl font-bold text-gray-900 dark:text-white">{{$user->name}}</h6>
 
                 <hr style="margin-top:20px;border: 1px sold white">

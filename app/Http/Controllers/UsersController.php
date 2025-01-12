@@ -15,7 +15,9 @@ use Illuminate\View\View;
 
 use File;
 use URL;
-
+use Mail;
+use App\Mail\SendLink;
+    
 class UsersController extends Controller
 {
     //
@@ -114,7 +116,15 @@ class UsersController extends Controller
         
         $user = QuotUsers::findOrFail($id);
      
-
+        $mailData = [
+            'link' => $link,
+            
+        ];
+        
+        Mail::to($user->email)->send(new SendLink($mailData));
+             
+        // dd("Email is sent successfully.");
         return redirect()->route('users.view')->with('message', 'Link has been Created for '.$user->name.' and sent to '.$user->email.' Successfully!' )->with('link',$link);
     }
 }
+
