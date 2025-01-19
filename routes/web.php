@@ -29,8 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 // History
 Route::middleware('auth')->group(function () {
-    Route::get('/history', [HstoryController::class, 'index'])->name('history.history');    
-    
+    Route::get('/history', [HstoryController::class, 'index'])->name('history.history');        
 });
 
 
